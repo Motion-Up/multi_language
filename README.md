@@ -17,9 +17,6 @@
        os.path.join(BASE_DIR, 'название приложения/locale')
    ]
    
-   Создвать папку locale в приложении и внутри создать папки с языками какие 
-   указаны в settings.LANGUAGES
-   
    PARLER_LANGUAGES = {
        None: (
            {'code': 'ru', },
@@ -30,6 +27,9 @@
            'hide_untranslated': False,
        }
    }
+   
+   Создвать папку locale в приложении и внутри создать папки с языками какие 
+   указаны в settings.LANGUAGES
 
 3) Добавить в корневой urls:
    urlpatterns = i18n_patterns(
