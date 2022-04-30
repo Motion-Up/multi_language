@@ -1,0 +1,12 @@
+h1, h3 {
+  color: #220fd5;
+}
+li {
+  display: inline;
+  text-decoration: none;
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+  color: #DDAF94;
+}

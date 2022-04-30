@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container">
+
+      {% get_current_language as CURRENT_LANGUAGE %}
+      {% get_available_languages as AVAILABLE_LANGUAGES %}
+      {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+      <h1>{% trans "Пример перевода" %}</h1>
+      <div class="languages">
+        {% for language in languages %}
+          <li>
+            <a href="/{{ language.code }}/"
+              {% if language.code == CURRENT_LANGUAGE %} class="me-3 py-2 text-Primary text-decoration-none" {% endif %}
+              class="me-3 py-2 text-dark text-decoration-none">
+              {{ language.name_local }}
+            </a>
+          </li>
+        {% endfor %}
+        {% for object in objects %}
+          <div class="card p-4">
+            <p>{{ object.text }}</p>
+          </div>
+          <hr />
+        {% endfor %}
+      </div>
+    </div>
+{% endblock %}
