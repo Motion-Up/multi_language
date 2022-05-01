@@ -22,6 +22,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,7 +30,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'change_language.apps.ChangeLanguageConfig',
-    'parler',
     'rosetta',
 ]
 
@@ -129,14 +129,3 @@ LOCALE_PATHS = [
 
 LANGUAGE_SESSION_KEY = 'session_language_appname'
 LANGUAGE_COOKIE_NAME = 'cookie_language_appname'
-
-PARLER_LANGUAGES = {
-    None: (
-        {'code': 'ru', },
-        {'code': 'en', },
-    ),
-    'default': {
-        'fallbacks': ['ru'],
-        'hide_untranslated': False,
-    }
-}
